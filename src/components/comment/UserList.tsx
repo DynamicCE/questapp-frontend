@@ -1,5 +1,6 @@
-    import React from 'react';
+import React from 'react';
 import {useUsers }from '../../hooks/useUsers';
+export {};
 
 
 export const UserList: React.FC = () => {
