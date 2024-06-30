@@ -1,13 +1,6 @@
 import React from 'react';
 import usePosts from '../../hooks/usePosts';
-import Post from './Post';
-
-interface PostType {
-  id: number;
-  // Diğer post özellikleri
-}
-
-
+import Post, { PostType } from './Post';
 
 const PostList: React.FC<{ userId?: number }> = ({ userId }) => {
   const { posts, loading, error } = usePosts(userId);
@@ -18,7 +11,7 @@ const PostList: React.FC<{ userId?: number }> = ({ userId }) => {
   return (
     <div>
       {posts.map((post: PostType) => (
-        <Post key={post.id} post={post} />
+        <Post key={post.id} {...post} />
       ))}
     </div>
   );

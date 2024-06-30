@@ -1,15 +1,22 @@
 import React from 'react';
-import Post from '../components/post/Post';
-import Comment from '../components//comment/Comment';
+import Post, { PostType } from '../components/post/Post';
+import Comment from '../components/comment/Comment';
+
+interface CommentType {
+  id: number;
+  postId: number;
+  username: string;
+  content: string;
+}
 
 const Home: React.FC = () => {
   // Bu veriler normalde bir API'den gelecektir
-  const posts = [
-    { id: 1, username: 'User1', content: 'Bu bir örnek post içeriğidir.', likeCount: 5 },
-    { id: 2, username: 'User2', content: 'Başka bir örnek post.', likeCount: 3 },
+  const posts: PostType[] = [
+    { id: 1, title: 'Post 1', text: 'Post 1 içeriği', userId: 1, username: 'User1' },
+    { id: 2, title: 'Post 2', text: 'Post 2 içeriği', userId: 2, username: 'User2' },
   ];
 
-  const comments = [
+  const comments: CommentType[] = [
     { id: 1, postId: 1, username: 'Commenter1', content: 'Harika bir post!' },
     { id: 2, postId: 1, username: 'Commenter2', content: 'Katılıyorum!' },
   ];
@@ -31,4 +38,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-export {};
