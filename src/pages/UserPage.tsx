@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserList } from '../components/comment/UserList';
+import { UserList } from '../components/user/UserList';
 export {};
 
 export const UserPage: React.FC = () => {
