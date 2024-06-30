@@ -1,20 +1,20 @@
 import React from 'react';
 import { UserPage } from './pages/UserPage';
 import Navbar from './components/navbar/Navbar';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import AppRoutes from './routes/AppRoutes';
 
 function App() {
   return (
-    <Router>
-      <AuthProvider>
+    <AuthProvider>
+      <BrowserRouter>
         <div className="App">
           <Navbar />
-          <AppRoutes /> 
+          <AppRoutes />
         </div>
-      </AuthProvider>
-    </Router>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

@@ -1,14 +1,17 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import LoginPage from '../pages/LoginPage';
 import HomePage from '../pages/HomePage';
+import LoginPage from '../pages/LoginPage';
 import RegisterPage from '../pages/RegisterPage';
+import {UserPage} from '../pages/UserPage';
+
 const AppRoutes = () => {
   return (
     <Routes>
-       <Route path="/login" element={<LoginPage />} />
-       <Route path='/home' element= {<HomePage/>}/>
-    <Route path='/register' element= {<RegisterPage/>}/>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/users/:userId" element={<UserPage />} />
     </Routes>
   );
 };
