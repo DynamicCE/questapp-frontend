@@ -4,6 +4,14 @@ interface PostProps {
   username: string;
   content: string;
   likeCount: number;
+  post: PostType;
+}
+interface PostType {
+  id: number;
+  title: string;
+  text: string;
+  userId: number;
+  username: string;
 }
 
 const Post: React.FC<PostProps> = ({ username, content, likeCount }) => {

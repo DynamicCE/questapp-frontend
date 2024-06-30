@@ -7,9 +7,7 @@ interface PostType {
   // Diğer post özellikleri
 }
 
-interface PostProps {
-  post: PostType;
-}
+
 
 const PostList: React.FC<{ userId?: number }> = ({ userId }) => {
   const { posts, loading, error } = usePosts(userId);

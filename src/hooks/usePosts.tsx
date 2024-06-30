@@ -1,10 +1,16 @@
 import { useState, useEffect } from 'react';
 import {postService} from '../services/postService';
 
-// PostDTO ve diğer DTO'ları buraya da ekleyin
+interface PostType {
+  id: number;
+  title: string;
+  text: string;
+  userId: number;
+  username: string;
+}
 
 const usePosts = (userId?: number) => {
-  const [posts, setPosts] = useState<PostDTO[]>([]);
+  const [posts, setPosts] = useState<PostType[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
