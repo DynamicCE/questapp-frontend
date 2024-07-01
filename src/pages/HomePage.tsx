@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Post, { PostType } from '../components/post/Post';
 import Comment from '../components/comment/Comment';
 
@@ -10,6 +10,8 @@ interface CommentType {
 }
 
 const Home: React.FC = () => {
+  const [showPostForm, setShowPostForm] = useState(false);
+
   // Bu veriler normalde bir API'den gelecektir
   const posts: PostType[] = [
     { id: 1, title: 'Post 1', text: 'Post 1 içeriği', userId: 1, username: 'User1', profilePictureUrl: 'https://example.com/default-profile-picture1.jpg' },
@@ -20,9 +22,22 @@ const Home: React.FC = () => {
     { id: 1, postId: 1, username: 'Commenter1', content: 'Harika bir post!' },
     { id: 2, postId: 1, username: 'Commenter2', content: 'Katılıyorum!' },
   ];
+  const handleCreatePost = (title: string, content: string) => {
+
+    console.log('Yeni post:', { title, content });
+
+    setShowPostForm(false);
+
+  };
 
   return (
     <div className="container mx-auto mt-8 px-4">
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={() => setShowPostForm(true)}
+      >
+        Yeni Post Oluştur
+      </button>
       {posts.map(post => (
         <div key={post.id} className="mb-8">
           <Post {...post} />
