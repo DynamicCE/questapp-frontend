@@ -12,8 +12,8 @@ interface CommentType {
 const Home: React.FC = () => {
   // Bu veriler normalde bir API'den gelecektir
   const posts: PostType[] = [
-    { id: 1, title: 'Post 1', text: 'Post 1 içeriği', userId: 1, username: 'User1' },
-    { id: 2, title: 'Post 2', text: 'Post 2 içeriği', userId: 2, username: 'User2' },
+    { id: 1, title: 'Post 1', text: 'Post 1 içeriği', userId: 1, username: 'User1', profilePictureUrl: 'https://example.com/default-profile-picture1.jpg' },
+    { id: 2, title: 'Post 2', text: 'Post 2 içeriği', userId: 2, username: 'User2', profilePictureUrl: 'https://example.com/default-profile-picture2.jpg' },
   ];
 
   const comments: CommentType[] = [

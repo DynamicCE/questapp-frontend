@@ -22,7 +22,8 @@ const usePosts = (userId?: number) => {
           userId: post.userId,
           username: post.username,
           content: post.content,
-          likeCount: post.likeCount
+          likeCount: post.likeCount,
+          profilePictureUrl: 'https://example.com/default-profile-picture.jpg'
         }));
         setPosts(formattedData);
       } catch (err) {
