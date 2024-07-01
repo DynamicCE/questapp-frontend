@@ -1,6 +1,6 @@
 import React from 'react';
 import LikeButton from '../like/LikeButton';
-import DislikeButton from '../like/DisLikeButton';
+
 interface CommentProps {
   username: string;
   content: string;
@@ -15,7 +15,8 @@ const Comment: React.FC<CommentProps> = ({ username, content }) => {
       </div>
       <p className="text-sm text-[#e5e7eb]">{content}</p>
       <LikeButton initialLikeCount={10} />
-      <DislikeButton initialDislikeCount={1} />
+
+      
     </div>
   );
 };
